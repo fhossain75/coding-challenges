@@ -1,5 +1,5 @@
 import sys  # todo: Use argparse
-from commands import byte_counter
+from commands import *
 
 # Error handling: Incorrect input
 if len(sys.argv) < 3:
@@ -10,7 +10,7 @@ command, file_name = sys.argv[1], sys.argv[2]
 
 command_map = {
     '-c': lambda: byte_counter(file_name),
-    '-l': lambda: byte_counter(file_name),
+    '-l': lambda: line_counter(file_name),
     '-w': lambda: byte_counter(file_name),
     '-m': lambda: byte_counter(file_name)
 }
