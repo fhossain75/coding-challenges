@@ -25,10 +25,18 @@ def word_counter(file_name):
     words = []
     with open(file_path, 'r') as f:
         for line in f:
-            words += line.strip().split(' ')
-
-    # Remove empty string
-    words = [word for word in words if word != '']
-    print(words)
+            words += line.strip().split()
 
     return f"{len(words)} {file_name}"
+
+
+def character_counter(file_name):
+    file_path = os.getcwd() + '/' + file_name
+
+    characters = []
+    with open(file_path, 'r') as f:
+        for line in f:
+            for word in line.split():
+                characters += list(word)
+
+    return f"{len(characters)} {file_name}"

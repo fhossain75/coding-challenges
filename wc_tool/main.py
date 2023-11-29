@@ -12,7 +12,7 @@ command_map = {
     '-c': lambda: byte_counter(file_name),
     '-l': lambda: line_counter(file_name),
     '-w': lambda: word_counter(file_name),
-    '-m': lambda: byte_counter(file_name)
+    '-m': lambda: character_counter(file_name) # todo: fix count
 }
 
 # Call the appropriate function based on the command
