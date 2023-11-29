@@ -11,7 +11,7 @@ command, file_name = sys.argv[1], sys.argv[2]
 command_map = {
     '-c': lambda: byte_counter(file_name),
     '-l': lambda: line_counter(file_name),
-    '-w': lambda: byte_counter(file_name),
+    '-w': lambda: word_counter(file_name),
     '-m': lambda: byte_counter(file_name)
 }
 
@@ -20,3 +20,5 @@ if command in command_map:
     print(command_map[command]())
 else:
     print("Invalid command. Please choose from -c, -l, -w, -m.")
+
+# todo: create test cases

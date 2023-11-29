@@ -17,3 +17,18 @@ def line_counter(file_name):
 
     with open(file_path, 'r') as f:
         return f"{len(f.readlines())} {file_name}"
+
+
+def word_counter(file_name):
+    file_path = os.getcwd() + '/' + file_name
+
+    words = []
+    with open(file_path, 'r') as f:
+        for line in f:
+            words += line.strip().split(' ')
+
+    # Remove empty string
+    words = [word for word in words if word != '']
+    print(words)
+
+    return f"{len(words)} {file_name}"
