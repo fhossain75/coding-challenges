@@ -5,8 +5,8 @@ def byte_counter(file_name):
 
     file_path = os.getcwd() + '/' + file_name
 
-    # todo: Add error handling: "file doesn't exist"
     if not os.path.isfile(file_path):
-        pass
+        raise ValueError("Error: File does not exist.")
+        sys.exit(1)
 
-    return f"{os.path.getsize('d:/file.jpg')} {file_name}"
+    return f"{os.path.getsize(file_path)} {file_name}"
